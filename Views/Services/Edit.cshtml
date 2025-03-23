@@ -1,0 +1,45 @@
+﻿@model BeautyParlourManagementSystemAPI.Models.Services
+
+<div class="container mt-4">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center text-pink"><i class="fas fa-edit"></i> Edit Beauty Service</h2>
+        <hr class="mb-4">
+
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="ServiceID" /> <!-- Hidden ID field -->
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ServiceName" class="control-label"><i class="fas fa-cut"></i> Service Name</label>
+                        <input asp-for="ServiceName" class="form-control" placeholder="Enter service name" />
+                        <span asp-validation-for="ServiceName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ServiceCost" class="control-label"><i class="fas fa-dollar-sign"></i> Service Cost (RM)</label>
+                        <input asp-for="ServiceCost" class="form-control" placeholder="Enter price" />
+                        <span asp-validation-for="ServiceCost" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mt-3">
+                <label asp-for="ServiceDescription" class="control-label"><i class="fas fa-info-circle"></i> Service Description</label>
+                <textarea asp-for="ServiceDescription" class="form-control" rows="3" placeholder="Briefly describe the service"></textarea>
+                <span asp-validation-for="ServiceDescription" class="text-danger"></span>
+            </div>
+
+            <div>
+            <button type="submit" class="btn btn-primary me-2">
+            <i class="fas fa-save"></i> Save Changes
+            </button>
+            <a asp-action="Index" class="btn btn-secondary">
+               <i class="fas fa-times"></i> Cancel
+                 </a>
+            </div>
+        </form>
+    </div>
+</div>

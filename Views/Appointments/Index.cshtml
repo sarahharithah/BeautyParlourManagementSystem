@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Appointment List";
+}
+@model IEnumerable<BeautyParlourManagementSystemAPI.Models.Appointment>
+
+<div class="container mt-4">
+    <div class="card shadow-lg p-4">
+    <h2 class="text-center mb-4" style="color: #9932CC; font-weight: bold;">Appointments List</h2>
+    </h2>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <p class="text-muted mb-0">Appointments to look forward on our parlour!</p>
+        <a asp-action="Create" class="btn btn-primary">+ Add New Appointment</a>
+    </div>
+
+    <div class="table-responsive">
+            <table class="table table-striped table-bordered text-center">
+            <thead class="bg-light text-dark">
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Status</th>
+                    <th>Appointment Remark</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var appointment in Model)
+                {
+                    <tr>
+                        <td>@appointment.CustomerName</td>
+                        <td>@appointment.AppointmentDate.ToString("MMMM dd, yyyy")</td>
+                        <td>
+                            <span class="badge
+                                @(appointment.AppointmentStatus == "Confirmed" ? "bg-success" :
+                                  appointment.AppointmentStatus == "Pending" ? "bg-warning" :
+                                  "bg-danger")">
+                                @appointment.AppointmentStatus
+                            </span>
+                        </td>
+                        <td>@appointment.AppointmentRemark</td>
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@appointment.AppointmentID" class="btn btn-sm btn-warning">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@appointment.AppointmentID" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

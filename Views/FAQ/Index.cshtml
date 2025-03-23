@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "FAQ";
+}
+
+<div class="container mt-5">
+    <h1 class="display-4 text-center" style="color: #9932CC; font-weight: bold;">Frequently Asked Questions</h1>
+    <p class="lead text-muted text-center">Find solutions to a variety of inquiries regarding our services and bookings.
+    </p>
+
+    <div class="accordion mt-4" id="faqAccordion">
+
+        <!-- Question 1 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    How can I book an appointment?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    You can quickly schedule an appointment by clicking on our <strong>Appointments</strong> page, selecting your desired service, and picking a convenient date and time.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    What services do you offer?
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    We provide a wide range of beauty treatments, including [hairstyles, facials, manicures, pedicures, and spa services]. Visit our <strong>Services</strong> page for more information.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    What payment methods do you accept?
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    We accept numerous payment methods including <strong>cash, credit/debit cards, and online payment options</strong> for a hassle-free experience.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Can I reschedule or cancel my appointment?
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    You can change or cancel your appointment by signing into your user account and navigating your appointments in the <strong>Appointments</strong> section.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mt-5 text-center">
+        <p class="lead">Still have questions? <a asp-controller="Contact" asp-action="Index" class="text-decoration-none" style="color: #9932CC;">Contact us</a> for more details.</p>
+        <p>Visit Us: 46-56, Jalan 5/101C, Cheras Business Centre
+        </p>
+        <p>Contact Us: +6039993312 </p>
+        <a class="btn btn-lg btn-primary" asp-controller="Home" asp-action="Index">Return: Home Page</a>
+    </div>
+</div>
